@@ -4,8 +4,7 @@
 #define FIGURE_H
 
 #define CHAR_EMPTY ' '
-#define CHAR_OBJECT '•'
-#define CHAR_LOCK '*'
+#define CHAR_OBJECT '*'
 #define CHAR_SIDE '#'
 
 class Coordinates

@@ -196,7 +196,7 @@ void TestApp::lockIn()
     for (int x = 0; x < obj->getSizeX(); x++)
         for (int y = 0; y < obj->getSizeY(); y++)
             if (obj->arr[x][y] != CHAR_EMPTY)
-                SetChar(x + obj->coord.X, y + obj->coord.Y, CHAR_LOCK);
+                SetChar(x + obj->coord.X, y + obj->coord.Y, CHAR_OBJECT);
     delete obj;
     delete oldObj;
 }
@@ -223,7 +223,7 @@ bool TestApp::rightIsEmpty()
         for (int x = obj->getSizeX() - 1; x >= 0; x--)
             if (obj->arr[x][y] != CHAR_EMPTY)
             {
-                if (GetChar(obj->coord.X + x + 1, obj->coord.Y + y) == CHAR_LOCK)
+                if (GetChar(obj->coord.X + x + 1, obj->coord.Y + y) == CHAR_OBJECT)
                     return false;
                 else
                     break;
@@ -251,7 +251,7 @@ bool TestApp::canBeRotate()
     temp->rotate();
     for (int y = 0; y < temp->getSizeY(); y++)
         for (int x = 0; x < temp->getSizeX(); x++)
-            if (temp->arr[x][y] != CHAR_EMPTY && GetChar(temp->coord.X + x, temp->coord.Y + y) == CHAR_LOCK)
+            if (temp->arr[x][y] != CHAR_EMPTY && GetChar(temp->coord.X + x, temp->coord.Y + y) == CHAR_OBJECT)
                 return false;
     return true;
 }
